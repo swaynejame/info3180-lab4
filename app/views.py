@@ -10,6 +10,7 @@ from flask import render_template, request, redirect, url_for, flash, session, a
 from werkzeug.utils import secure_filename
 
 from .forms import UploadForm
+from .iteration import *
 
 ###
 # Routing for your application.
@@ -21,6 +22,17 @@ from .forms import UploadForm
 def home():
     """Render website's home page."""
     return render_template('home.html')
+
+
+@app.route('/files')
+def files():
+    if not session.get('logged_in'):
+        abort(401)
+
+    images = get_uploaded_images()
+
+    """Render website's home page."""
+    return render_template('files.html', images_list=images)
 
 
 @app.route('/about/')
