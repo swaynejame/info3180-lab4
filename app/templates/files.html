@@ -3,11 +3,11 @@
 
 {% block main %}
 <h1 class="page-header">Files</h1>
-    {% for image in images_list %}
     <div id="main">
-        <div>
+        {% for image in images_list %}
+        <div id="slot">
             <img src="{{ url_for('static', filename='uploads/' + image) }}"/>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 {% endblock %}
