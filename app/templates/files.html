@@ -6,7 +6,9 @@
     <div id="main">
         {% for image in images_list %}
         <div>
-            <img src="{{ url_for('static', filename='uploads/' + image) }}"/>
+            <ul>
+                <li><img src="{{ url_for('static', filename='uploads/' + image) }}"/></li>
+            </ul>
         </div>
         {% endfor %}
     </div>

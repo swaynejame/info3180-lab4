@@ -2,6 +2,10 @@ body {
     padding-top: 5rem;
 }
 
+ul{
+    list-style-type: none;
+}
+
 #main{
     display: flex;
     flex-wrap: wrap;
@@ -15,5 +19,4 @@ img{
     min-height: 100px;
     max-width: 280px;
     max-height: 280px;
-    margin: 5px;
 }
