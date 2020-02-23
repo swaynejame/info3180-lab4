@@ -28,10 +28,8 @@ def home():
 def files():
     if not session.get('logged_in'):
         abort(401)
-
-    images = get_uploaded_images()
-
-    """Render website's home page."""
+    else:
+        images = get_uploaded_images()
     return render_template('files.html', images_list=images)
 
 
